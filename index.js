@@ -4,17 +4,17 @@ const swaggerUI = require("swagger-ui-express");
 const YAML = require("yamljs");
 
 const app = express();
-const swaggerDocument = YAML.load("./swagger.yaml");
 
 
+// const swaggerDocument = YAML.load("./swagger.yaml");
 app.use(express.json())
-app.use("/docs", swaggerUI.serve, swaggerUI.setup(swaggerDocument));
+// app.use("/docs", swaggerUI.serve, swaggerUI.setup(swaggerDocument));
 
-app.use(
-  OpenApiValidator.middleware({
-    apiSpec: "./swagger.yaml",
-  })
-);
+// app.use(
+//   OpenApiValidator.middleware({
+//     apiSpec: "./swagger.yaml",
+//   })
+// );
 
 // Routes
 app.get("/", (req, res) => {
